@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ContactCardsContainer from './components/contact-card-container';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <ContactCardsContainer />
     </div>
   );
 }
 
 export default App;
+
+// # Second Day Challenge / Fetch Data
+// - Create a new project fetch-contact-cards
+// - Create a new folder called Components
+// - Create a new Class Component called ContactCardsContainer
+// - Create a new Functional Component called ContactCard
+// - Create some state inside of the ContactCardsContainer:
+// ```javascript
+// users = []
+// ```
+// - ContactCardsContainer needs to fetch data from the following url and update state.users with its data:
+//   - https://jsonplaceholder.typicode.com/users
+//   - I would recommend the lifecycle method componentDidMount()
+// - ContactCard will render:
+//   - NAME
+//   - Phone: users phone number
+//   - Email: users email
+//   - Company: users company name
+//   - Address: users street, city, and state
+// - The info to render in ContactCard will come from ContactCardsContainer as props
+// - You will need to map over state in ContactCardsContainer to render ContactCards and pass the user info as props
