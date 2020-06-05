@@ -1,11 +1,11 @@
 import React from 'react';
-import ContactCardsContainer from './components/contact-card-container';
+import GunCabinet from './components/gun-cabinet';
 
 function App() {
   return (
     <div className="App">
       hello from App.js
-     <ContactCardsContainer />
+      <GunCabinet />
     </div>
   );
 }
