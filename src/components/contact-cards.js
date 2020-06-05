@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function ContactCard(props) {
-
-    return (
+export default function ContactCard(props) {
+    return(
         <div>
-            <h1>{props.userInfo.name}</h1>
-            <div>Phone: {props.userInfo.phone}</div>
-            <div>Email: {props.userInfo.email}</div>
-            <div>Company: {props.userInfo.company.name}</div>
-            <div>Address: {props.userInfo.address.street}</div>
+            <h1>{props.movie.title}</h1>
+            <div>My prop ended up here{props.myprop}</div>
+            <div>Main Character is: {props.movie.character}</div>
+            <div>Also Starring: {props.movie.sup_character}</div>
         </div>
     )
 }
-
-export default ContactCard;

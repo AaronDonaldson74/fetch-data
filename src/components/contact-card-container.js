@@ -1,84 +1,42 @@
-import React, {Component} from 'react';
-import ContactCard from "./contact-cards"
+import React, { Component } from 'react';
+import ContactCard from './contact-cards';
 
+export default class ContactCardContainer extends Component {
 
-export default class ContactCardsContainer extends Component {
-    constructor() {
-        super();
+constructor() {
+    super();
 
-        this.state = {
-            users: [
-                {
-                    name: "aaron",
-                    phone: 555555555, 
-                    email: "something@something.com",
-                    address: {
-                        street: "anywhere street",
-                        city: "pinedale",
-                        state: "WY"
-                    },
-                    company: {
-                        name: "zipco"
-                    }
-                },
-                {
-                    name: "Sneezfeezle",
-                    phone: 555555555, 
-                    email: "something@something.com",
-                    address: {
-                        street: "anywhere street",
-                        city: "pinedale",
-                        state: "WY"
-                    },
-                    company: {
-                        name: "zipco"
-                    }
-                }
-            ]
-        }
+    this.state={
+        videos: [
+            {
+                title: '"Finding Nemo"',
+                character: "Dory",
+                sup_character: "Marlin"
+            },
+            {
+                title: '"Lord of the rings"',
+                character: "Frodo",
+                sup_character: "Gandalph"
+            }
+        ]
     }
-    renderContactCards = () => {
-        return this.state.users.map(user => {
-            return <ContactCard userInfo={user} />
-        })
-    }
+}
 
-    render() {
-        return (
-            <div>
-                <h1>Hello from ContactCardsContainer</h1>
-                {this.renderContactCards()}
-            </div>
-        )
-        
-    }
-    
-    
+renderContactCard = () => {
+    return this.state.videos.map(video => {
+        return <ContactCard 
+        myprop="Made a card property" 
+        movie={video} />
+    })
 }
 
 
-
-
-
-
-
-
-
-
-
-
-        //     fetchData = () => {
-        //         fetch('https://jsonplaceholder.typicode.com/users')
-        //         .then(response => response.json())
-        //         .then(response => {
-        //             this.setState({
-        //                 users: response
-        //             })
-        //         });
-        //     }
-    
-        //     componentDidMount() {
-        //         fetchData() {
-    
-        //         }
-        //     }
+render() {
+    return(
+        <div>
+            <h2>Hello from the ContactCardContainer</h2>
+            {this.renderContactCard()}
+        </div>
+    )
+}
+}
